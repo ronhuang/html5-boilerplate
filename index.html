@@ -53,17 +53,40 @@
 
 </head>
 
-<body>
+<body class="{{ page.bodyclass }}">
 
   <div id="container">
     <header>
-
+      <nav>
+        <ul>
+          <li><a href="/">{{ site.title }}</a></li>
+          {% for section in site.sections %}
+          <li><a href="/{{ section }}/">{{ section }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
     </header>
+    <aside>
+      <section title="Search" class="search">
+      </section>
+    </aside>
     <div id="main" role="main">
-
+      <article>
+        {{ content }}
+      </article>
     </div>
+    <aside>
+      <section title="Advertisement" class="ad">
+      </section>
+    </aside>
     <footer>
-
+      <section title="Copyright" class="copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+          <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" />
+        </a>
+        <br />
+        This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+      </section>
     </footer>
   </div> <!--! end of #container -->
 
